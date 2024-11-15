@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
-public class App {
+public class App implements NotificationListener {
     public static void main(String[] args) throws Exception {
-<<<<<<< HEAD
         // Create a UserFactory instance
         UserFactory userFactory = new UserFactory();
 
@@ -28,17 +27,20 @@ public class App {
 
         // Delete a profile
         userFactory.supprimerProfil(student);
-=======
+       
         App app = new App();
         app.creerApp();
     }
 
-    public void creerApp(){
+    public void creerApp() {
         Scanner scanner = new Scanner(System.in);
         Messagerie mess = new Messagerie();
         Profil profil = new Profil();
         Wishlist wl = new Wishlist();
         Feed fe = new Feed();
+
+        // App en tant qu'observateur
+        fe.addListener(this);
 
         System.out.println("Bienvenue dans PolyApp");
 
@@ -68,13 +70,13 @@ public class App {
 
             String input = scanner.nextLine();
 
-            //equalsIgnoreCase permet de prendre en compte les majuscule et minuscule
             if (input.equalsIgnoreCase("P")) {
                 profil.profilApp();
             } else if (input.equalsIgnoreCase("M")) {
                 mess.messagerieApp();
             } else if (input.equalsIgnoreCase("F")) {
                 fe.feedApp();
+                fe.addPost("Un nouveau post génial !");
             } else if (input.equalsIgnoreCase("W")) {
                 wl.wishlistApp();
             } else if (input.equalsIgnoreCase("R")) {
@@ -83,6 +85,10 @@ public class App {
                 System.out.println("Entrez une lettre valable.");
             }
         }
->>>>>>> main
+    }
+
+    @Override
+    public void receiveNotif(NotificationEvent event) {
+        System.out.println("Notification reçue dans l'App : " + event.getMessage());
     }
 }
