@@ -4,13 +4,13 @@ public class Messagerie {
    
     public void messagerieApp(){
         //Affichage de la messagerie
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         System.out.println("Vous êtes dans la messagerie");
         System.out.println("Pour accéder aux messages recus, tapez R");
         System.out.println("Pour envoyer un message, tapez E");
 
-        String input = scanner.nextLine();
+        String input = scan.nextLine();
         
         if (input.equals("R")){ 
              //A METTRE A JOUR
@@ -20,13 +20,13 @@ public class Messagerie {
 
             //On part du principe qu'il n'y a pas de doublons de noms 
             System.out.println("Veuillez entrer le nom du destinataire : ");
-            String nom=scanner.nextLine();
+            String nom=scan.nextLine();
 
             System.out.println("Veuillez entrer le prénom du destinataire : ");
-            String prenom=scanner.nextLine();
+            String prenom=scan.nextLine();
 
             System.out.println("Veuillez entrer le message à envoyé : ");
-            String message=scanner.nextLine();
+            String message=scan.nextLine();
         }
 
     }
