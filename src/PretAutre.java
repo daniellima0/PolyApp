@@ -1,11 +1,6 @@
 import java.util.List;
 
 public class PretAutre extends PostFactory {
-    protected String titre;
-    protected String description;
-    protected boolean soutient; // like 
-    protected List<User> publicUsers; 
-
     public PretAutre(String titre, String description, boolean soutient, List<User> publicUsers){
         super(titre, description, soutient, publicUsers);
     }

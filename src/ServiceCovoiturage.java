@@ -2,16 +2,6 @@ import java.util.Date;
 import java.util.List;
 
 public class ServiceCovoiturage extends ServicePost{
-    protected String titre;
-    protected String description;
-    protected boolean soutient; // like 
-    protected List<User> publicUsers; 
-    protected Date date;
-    protected String adresse;
-    protected int nb_personnes;
-    protected boolean wishlist; //On peut mettre un pret de matériel dans la wishlist
-
-    // specifique au covoiturage :
     protected String adresse_depart;
     protected String adresse_arrivee;
     protected Date heure_depart;
@@ -23,6 +13,7 @@ public class ServiceCovoiturage extends ServicePost{
         this.heure_depart=heure_depart;
     }
 
+    // Getters
     public String get_adresse_depart(){
         return this.adresse_depart;
     }

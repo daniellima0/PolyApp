@@ -1,11 +1,9 @@
 import java.util.List;
 
 public class InformationPost extends PostFactory{
-
-    public InformationPost(String titre, String description, List<User> publicUsers){
-        super(titre, description, publicUsers);
+    public InformationPost(String titre, String description, boolean soutient, List<User> publicUsers){
+        super(titre, description, soutient, publicUsers);
     }
-
 
     @Override
     public boolean hasPermission(User user){
@@ -16,6 +14,4 @@ public class InformationPost extends PostFactory{
     public void createPost(){
         System.out.println("Post created:" + titre);
     }
-
-
 }

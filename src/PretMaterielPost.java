@@ -1,12 +1,6 @@
 import java.util.List;
 
 public class PretMaterielPost extends PostFactory {
-    protected String titre;
-    protected String description;
-    protected boolean soutient; // like 
-    protected List<User> publicUsers; 
-
-    // spécifique au pret de materiel :
     protected String photo;
     protected String etat_final;
     protected String etat_initial;
@@ -18,6 +12,18 @@ public class PretMaterielPost extends PostFactory {
         this.photo=photo;
         this.etat_final=null;
         this.wishlist=false;
+    }
+
+    @Override
+    public boolean hasPermission(User user) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'hasPermission'");
+    }
+
+    @Override
+    public void createPost() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'createPost'");
     }
 
     public String get_etat_initial(){
@@ -35,18 +41,5 @@ public class PretMaterielPost extends PostFactory {
     public void set_wishlist(boolean wishlist){
         this.wishlist=wishlist;
     }
-
-    @Override
-    public boolean hasPermission(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'hasPermission'");
-    }
-
-    @Override
-    public void createPost() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createPost'");
-    }
-
 
 }

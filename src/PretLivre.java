@@ -1,16 +1,6 @@
 import java.util.List;
 
 public class PretLivre extends PretMaterielPost {
-    protected String titre;
-    protected String description;
-    protected boolean soutient; // like 
-    protected List<User> publicUsers; 
-    protected String photo;
-    protected String etat_final;
-    protected String etat_initial;
-    protected boolean wishlist; //On peut mettre un pret de matériel dans la wishlist
-
-    // spécifique au livre :
     protected String titre_livre;
     protected String auteur;
 
