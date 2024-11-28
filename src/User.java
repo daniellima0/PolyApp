@@ -6,7 +6,7 @@ public abstract class User implements Observer{
     private String prenom;
     private String mail;
     private List<Message> messagesRecus;
-    private List<PostFactory> wishList;
+    private List<Post> wishList;
 
     public User(String nom, String prenom, String mail) {
         this.nom = nom;
@@ -39,11 +39,11 @@ public abstract class User implements Observer{
         return messagesRecus;
     }
 
-    public void likePost(PostFactory post) { 
+    public void likePost(Post post) { 
         addToWishlist(post); 
     } 
     
-    private void addToWishlist(PostFactory post) { 
+    private void addToWishlist(Post post) { 
         this.wishList.add(post); 
         System.out.println(this.nom + " a ajouté le post à la wishlist : " + post); 
     }
@@ -54,13 +54,13 @@ public abstract class User implements Observer{
             System.out.println(this.nom + " a reçu un message"); 
             this.messagesRecus.add(new Message (event.getMessage()));
         }else if (event.getType().equals("POST")){
-            PostFactory post = (PostFactory) event.getPost(); 
+            Post post = (Post) event.getPost(); 
             System.out.println(this.nom + " a reçu une notification de nouveau post : " + post); 
         }
 
     }
 
-    public List<PostFactory> getWishList() {
+    public List<Post> getWishList() {
         for (int i=0; i<wishList.size();i++){
             this.wishList.get(i).toString();
         }
@@ -83,7 +83,7 @@ public abstract class User implements Observer{
         this.messagesRecus = messagesRecus;
     }
 
-    public void setPostsAimees(List<PostFactory> wishList) {
+    public void setPostsAimees(List<Post> wishList) {
         this.wishList = wishList;
     }
 }

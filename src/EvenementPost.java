@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.util.List;
 
-public class EvenementPost extends PostFactory{
+public class EvenementPost extends Post{
     protected Date date;
     protected String adresse;
     protected int nb_personnes;
@@ -18,12 +18,6 @@ public class EvenementPost extends PostFactory{
             }
         }
         return false;
-    }
-
-
-    @Override
-    public void createPost(){
-     // see exactually what to do 
     }
 
     // Getters and Setters

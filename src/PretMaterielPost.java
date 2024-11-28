@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class PretMaterielPost extends PostFactory {
+public class PretMaterielPost extends Post {
     protected String photo;
     protected String etat_final;
     protected String etat_initial;
@@ -18,12 +18,6 @@ public class PretMaterielPost extends PostFactory {
     public boolean hasPermission(User user) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'hasPermission'");
-    }
-
-    @Override
-    public void createPost() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createPost'");
     }
 
     public String get_etat_initial(){

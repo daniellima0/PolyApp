@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class InformationPost extends PostFactory{
+public class InformationPost extends Post{
     public InformationPost(String titre, String description, boolean soutient, List<User> publicUsers){
         super(titre, description, soutient, publicUsers);
     }
@@ -10,8 +10,4 @@ public class InformationPost extends PostFactory{
         return publicUsers.contains(user);
     }
 
-    @Override
-    public void createPost(){
-        System.out.println("Post created:" + titre);
-    }
 }

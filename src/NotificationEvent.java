@@ -4,13 +4,13 @@ public class NotificationEvent {
 
     private String message;
     private String type;
-    private PostFactory post;
+    private Post post;
 
     public NotificationEvent(String message, String type) { 
         this(message, type, null); 
     } 
     
-    public NotificationEvent(String message, String type, PostFactory post) { 
+    public NotificationEvent(String message, String type, Post post) { 
         this.message = message; 
         this.type = type; 
         this.post = post;
@@ -24,7 +24,7 @@ public class NotificationEvent {
         return type;
     }
 
-    public PostFactory getPost(){
+    public Post getPost(){
         return this.post;
     }
 
