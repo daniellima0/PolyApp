@@ -1,11 +1,11 @@
 import java.util.List;
 
 abstract class Post {
-    protected String titre;
-    protected String description;
-    protected boolean soutient; // like
-    protected List<User> publicUsers;
-    protected String lien; // Unique identifier for the post
+    private String titre;
+    private String description;
+    private boolean soutient; // like
+    private List<User> publicUsers;
+    private String lien; // Unique identifier for the post
 
     private static int counter = 1; // Static counter to track the number of posts created
 
@@ -20,24 +20,9 @@ abstract class Post {
         return "post#" + counter++;
     }
 
-    public void PostEvent() {
-        //TODO implement
-    }
-    
-    public void PostListener() {
-        //TODO implement
-    }
-
     // Abstract method for permission verification
     public abstract boolean hasPermission(User user);
 
-
-    // Example notification method (commented out in original code)
-    // public void notifyListeners(NotificationEvent event){
-    // for (notifyListeners listener : event.getListeners()){
-    // listener.receiveNotif(event);
-    // }
-    // }
 
     // Getters and Setters
     public String getTitre() {
@@ -56,7 +41,7 @@ abstract class Post {
         this.description = description;
     }
 
-    public boolean isSoutient() {
+    public boolean getSoutient() {
         return soutient;
     }
 

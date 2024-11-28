@@ -9,7 +9,7 @@ public class ServiceCours extends ServicePost{
     }
 
     // Getters
-    public String get_matiere(){
+    public String getMatiere(){
         return this.matiere;
     }
 }

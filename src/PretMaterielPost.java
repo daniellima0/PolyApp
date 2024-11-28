@@ -1,38 +1,46 @@
 
 public class PretMaterielPost extends Post {
     protected String photo;
-    protected String etat_final;
-    protected String etat_initial;
+    protected String etatFinal;
+    protected String etatInitial;
     protected boolean wishlist; //On peut mettre un pret de matériel dans la wishlist
 
-    public PretMaterielPost(String titre, String description, boolean soutient, String photo, String etat_initial){
+    public PretMaterielPost(String titre, String description, boolean soutient,String photo, String etat_initial){
         super(titre, description, soutient);
-        this.etat_initial=etat_initial;
+        this.etatInitial=etat_initial;
         this.photo=photo;
-        this.etat_final=null;
+        this.etatFinal=null;
         this.wishlist=false;
     }
 
     @Override
     public boolean hasPermission(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'hasPermission'");
+        if (user.getType().equals("Etudiant") || user.getType().equals("Delegue")){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
-    public String get_etat_initial(){
-        return this.etat_initial;
+    public String getEtatInitial(){
+        return this.etatInitial;
     }
 
-    public String get_photo(){
+    public String getPhoto(){
         return this.photo;
     }
 
-    public void set_etat_final(String etat_retour){
-        this.etat_final=etat_retour;
+    public void setEtatFinal(String etat_retour){
+        this.etatFinal=etat_retour;
     }
 
-    public void set_wishlist(boolean wishlist){
+    public void setWishlist(boolean wishlist){
         this.wishlist=wishlist;
+    }
+
+    public boolean isInWishList(){
+        return this.wishlist;
     }
 
 }

@@ -1,6 +1,6 @@
 public class PretLivre extends PretMaterielPost {
-    protected String titre_livre;
-    protected String auteur;
+    private String titre_livre;
+    private String auteur;
 
     public PretLivre(String titre, String description, boolean soutient, String photo, String etat_initial, String titre_livre, String auteur){
         super(titre, description, soutient, photo, etat_initial);
@@ -8,11 +8,11 @@ public class PretLivre extends PretMaterielPost {
         this.auteur=auteur;
     }
 
-    public String get_titre_livre(){
+    public String getTitreLivre(){
         return this.titre_livre;
     }
 
-    public String get_auteur(){
+    public String getAuteur(){
         return this.auteur;
     }
 }

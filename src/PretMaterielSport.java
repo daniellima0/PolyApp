@@ -9,11 +9,11 @@ public class PretMaterielSport extends PretMaterielPost {
         this.sport=sport;
     }
 
-    public String get_taille(){
+    public String getTaille(){
         return this.taille;
     }
 
-    public String get_sport(){
+    public String getSport(){
         return this.sport;
     }
 

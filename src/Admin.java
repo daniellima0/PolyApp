@@ -6,6 +6,10 @@ public class Admin extends User {
         this.metier = metier;
     }
 
+    public String getType(){
+        return "Admin";
+    }
+
     // Getters et Setters
     public String getMetier() {
         return metier;

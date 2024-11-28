@@ -20,8 +20,17 @@ public class Student extends User {
         System.out.println("Is Delegate:" + estDelegue);
     }
 
+    public String getType(){
+        if (estDelegue) {
+            return "Delegue";
+        }
+        else{
+            return "Etudiant";
+        }
+    }
+
     // Getters and Setters
-    public boolean EstDelegue() {
+    public boolean getEstDelegue() {
         return estDelegue;
     }
 

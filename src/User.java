@@ -22,6 +22,8 @@ public abstract class User implements Observer{
         System.out.println("Mail:" + mail);
     }
 
+    public abstract String getType(); //
+
     // Getters and Setters
     public String getNom() {
         return nom;
@@ -90,5 +92,6 @@ public abstract class User implements Observer{
     public void setPostsAimees(List<Post> wishList) {
         this.wishList = wishList;
     }
+
 }
     

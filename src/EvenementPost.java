@@ -2,9 +2,10 @@ import java.util.Date;
 import java.util.List;
 
 public class EvenementPost extends Post{
-    protected Date date;
-    protected String adresse;
-    protected int nb_personnes;
+    private Date date;
+    private String adresse;
+    private boolean wishlist;
+    private int nbPersonnes;
 
     public EvenementPost(String titre, String description, boolean soutient){
      super(titre, description, soutient);   
@@ -12,25 +13,33 @@ public class EvenementPost extends Post{
 
     @Override
     public boolean hasPermission(User user){
-        for (User u : publicUsers){
-            if (u.equals(user)){
-                return true;
-            }
+        if (user.getType().equals("BDE")){
+            return true;
         }
-        return false;
+        else{
+            return false;
+        }
     }
 
     // Getters and Setters
-    public Date get_date(){
+    public Date getDate(){
         return this.date;
     }
 
-    public String get_adresse(){
+    public String getAdresse(){
         return this.adresse;
     }
 
-    public int get_nb_personnes(){
-        return this.nb_personnes;
+    public int getNbPersonnes(){
+        return this.nbPersonnes;
+    }
+
+    public void setWishlist(boolean wishlist){
+        this.wishlist = wishlist;
+    }
+
+    public boolean isInWishList(){
+        return this.wishlist;
     }
 
 }

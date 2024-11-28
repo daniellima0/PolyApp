@@ -7,7 +7,7 @@ public class PretVetement extends PretMaterielPost {
         this.taille=taille;
     }
 
-    public String get_taille(){
+    public String getTaille(){
         return this.taille;
     }
 
