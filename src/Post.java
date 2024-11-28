@@ -9,11 +9,9 @@ abstract class Post {
 
     private static int counter = 1; // Static counter to track the number of posts created
 
-    public Post(String titre, String description, boolean soutient, List<User> publicUsers) {
+    public Post(String titre, String description) {
         this.titre = titre;
         this.description = description;
-        this.soutient = soutient;
-        this.publicUsers = publicUsers;
         this.lien = generateLien(); // Generate and assign unique lien
     }
 
