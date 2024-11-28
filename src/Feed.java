@@ -5,10 +5,12 @@ public class Feed {
     private User utilisateur;
     private Scanner scanner=new Scanner(System.in);
     private List<Post> posts;
+    private NotificationService notif;
 
     public Feed(User u, List <Post> p){
         this.utilisateur=u;
         this.posts=p;
+        this.notif = new NotificationService();
     }
 
     public void feedApp(){
@@ -133,6 +135,8 @@ public class Feed {
 
             // creation du post
             ServiceCours post_cours=new ServiceCours(titre, description, date, adresse, nbPersonnes, matiere);
+            posts.add(post_cours);
+            notif.createPostNotification("Nouveau post", post_cours);
             System.out.println("Le post a bien été créé");
         }
 
@@ -154,6 +158,8 @@ public class Feed {
 
             // creation du post
             ServiceCovoiturage post_covoiturage=new ServiceCovoiturage(titre, description, date, adresse, nbPersonnes, adresseArrivee,heureDepart);
+            posts.add(post_covoiturage);
+            notif.createPostNotification("Nouveau post", post_covoiturage);
             System.out.println("Le post a bien été créé");
         }
 
@@ -187,6 +193,8 @@ public class Feed {
 
             // creation du post
             PretVetement pret_vetement=new PretVetement(titre, description, nomPhoto, etatInitial, taille);
+            posts.add(pret_vetement);
+            notif.createPostNotification("Nouveau post", pret_vetement);
             System.out.println("Le post a bien été créé");
             
         }
@@ -208,6 +216,8 @@ public class Feed {
 
             // creation du post
             PretMaterielSport materiel_sport=new PretMaterielSport(titre, description, nomPhoto, etatInitial, taille, sport);
+            posts.add(materiel_sport);
+            notif.createPostNotification("Nouveau post", materiel_sport);
             System.out.println("Le post a bien été créé");
         
         }
@@ -229,6 +239,8 @@ public class Feed {
 
             // creation du post
             PretLogement logement=new PretLogement(titre, description, nomPhoto, etatInitial, adresse, duree);
+            posts.add(logement);
+            notif.createPostNotification("Nouveau post", logement);
             System.out.println("Le post a bien été créé");
         }
 
@@ -249,6 +261,8 @@ public class Feed {
 
             // creation du post
             PretLivre livre=new PretLivre(titre, description, nomPhoto, etatInitial, titre, auteur);
+            posts.add(livre);
+            notif.createPostNotification("Nouveau post", livre);
             System.out.println("Le post a bien été créé");
         }
 
@@ -263,6 +277,8 @@ public class Feed {
 
             // creation du post
             PretAutre autre=new PretAutre(titre, description, nomPhoto, etatInitial);
+            posts.add(autre);
+            notif.createPostNotification("Nouveau post", autre);
             System.out.println("Le post a bien été créé");
         }
 
@@ -276,6 +292,8 @@ public class Feed {
 
         // creation du post
         InformationPost info=new InformationPost(titre, description);
+        posts.add(info);
+        notif.createPostNotification("Nouveau post", info);
         System.out.println("Le post a bien été créé");
     }
 
@@ -293,6 +311,8 @@ public class Feed {
 
         // création du post
         EvenementPost evenement=new EvenementPost(titre, description, date, adresse, nombre);
+        posts.add(evenement);
+        notif.createPostNotification("Nouveau post", evenement);
         System.out.println("Le post a bien été créé");
 
     }

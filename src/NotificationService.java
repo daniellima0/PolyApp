@@ -5,6 +5,10 @@ public class NotificationService implements Observable {
     private final ArrayList<Observer> observers = new ArrayList<>();
     private NotificationEvent event;
 
+    public NotificationService(){
+        this.event = new NotificationEvent();
+    }
+
     @Override
     public void addObserver(Observer observer) {
         observers.add(observer);

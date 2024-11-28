@@ -6,6 +6,10 @@ public class NotificationEvent {
     private String type;
     private Post post;
 
+    public NotificationEvent(){
+        this(null, null, null);
+    }
+
     public NotificationEvent(String message, String type) { 
         this(message, type, null); 
     } 
