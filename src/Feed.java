@@ -113,20 +113,38 @@ public class Feed {
         String choix_service=scanner.nextLine();
         if (choix_service.equals("C")){
             System.out.println("Vous avez choisi de proposer un cours");
-            this.choixInformationsGenerales(scanner, utilisateur);
-            this.choixInformationsService(scanner, utilisateur);
+            String[] infosGenerales=this.choixInformationsGenerales(scanner, utilisateur);
+            String titre=infosGenerales[0];
+            String description=infosGenerales[1];
+            String [] infosService=this.choixInformationsService(scanner, utilisateur);
+            String date=infosService[0];
+            String adresse=infosService[1];
+            int nbPersonnes=Integer.parseInt(infosService[2]);
 
             System.out.println("Informations précises pour le cours");
-            // a rajouter
+            System.out.println("Dans quelle matière voulez-vous donner un cours ?");
+            String matiere=scanner.nextLine();
+
+            // creation du post
         }
 
         if (choix_service.equals("V")){
             System.out.println("Vous avez choisi de proposer un covoiturage");
-            this.choixInformationsGenerales(scanner, utilisateur);
-            this.choixInformationsService(scanner, utilisateur);
+            String[] infosGenerales=this.choixInformationsGenerales(scanner, utilisateur);
+            String titre=infosGenerales[0];
+            String description=infosGenerales[1];
+            String [] infosService=this.choixInformationsService(scanner, utilisateur);
+            String date=infosService[0];
+            String adresse=infosService[1];
+            int nbPersonnes=Integer.parseInt(infosService[2]);
 
-            System.out.println("Informations précises pour le cours");
-            // a rajouter
+            System.out.println("Informations précises pour le covoiturage");
+            System.out.println("Quelle est l'adresse d'arrivée ?");
+            String adresseArrivee=scanner.nextLine();
+            System.out.println("Quelle est l'heure d'arrivée ?");
+            String heureArrivee=scanner.nextLine();
+
+            // creation du post
         }
 
 
@@ -146,55 +164,95 @@ public class Feed {
 
         if (choix_materiel.equals("V")){
             System.out.println("Vous avez choisi de proposer un vêtement");
-            this.choixInformationsGenerales(scanner, utilisateur);
-            this.choixInformationsPretMateriel(scanner, utilisateur);
+            String[] infosGenerales=this.choixInformationsGenerales(scanner, utilisateur);
+            String titre=infosGenerales[0];
+            String description=infosGenerales[1];
+            String [] infosPretMateriel=this.choixInformationsPretMateriel(scanner, utilisateur);
+            String nomPhoto=infosPretMateriel[0];
+            String etatInitial=infosPretMateriel[1];
 
             System.out.println("Informations précises pour les vêtements");
-            // a rajouter
+            System.out.println("Quelles est la taille du vêtement ?");
+            String taille=scanner.nextLine();
+
+            // creation post
             
         }
 
         if (choix_materiel.equals("S")){
             System.out.println("Vous avez choisi de proposer un matériel de sport");
-            this.choixInformationsGenerales(scanner, utilisateur);
-            this.choixInformationsPretMateriel(scanner, utilisateur);
+            String[] infosGenerales=this.choixInformationsGenerales(scanner, utilisateur);
+            String titre=infosGenerales[0];
+            String description=infosGenerales[1];
+            String [] infosPretMateriel=this.choixInformationsPretMateriel(scanner, utilisateur);
+            String nomPhoto=infosPretMateriel[0];
+            String etatInitial=infosPretMateriel[1];
 
             System.out.println("Informations précises pour le matériel de sport");
-            // a rajouter
+            System.out.println("Quelle est la taille du matériel ?");
+            String taille=scanner.nextLine();
+            System.out.println("Pour quel sport est-ce destiné ?");
+            String sport=scanner.nextLine();
+
+            // creation du post
         }
 
         if (choix_materiel.equals("M")){
             System.out.println("Vous avez choisi de proposer un logement");
-            this.choixInformationsGenerales(scanner, utilisateur);
-            this.choixInformationsPretMateriel(scanner, utilisateur);
+            String[] infosGenerales=this.choixInformationsGenerales(scanner, utilisateur);
+            String titre=infosGenerales[0];
+            String description=infosGenerales[1];
+            String [] infosPretMateriel=this.choixInformationsPretMateriel(scanner, utilisateur);
+            String nomPhoto=infosPretMateriel[0];
+            String etatInitial=infosPretMateriel[1];
 
             System.out.println("Informations précises pour le logement");
-            // a rajouter
+            System.out.println("Quelle est l'adresse du logement ?");
+            String adresse=scanner.nextLine();
+            System.out.println("Pour quelle durée est-il disponible ?");
+            String duree=scanner.nextLine();
+
+            // creation du post
         }
 
         if (choix_materiel.equals("L")){
             System.out.println("Vous avez choisi de proposer un livre");
-            this.choixInformationsGenerales(scanner, utilisateur);
-            this.choixInformationsPretMateriel(scanner, utilisateur);
+            String[] infosGenerales=this.choixInformationsGenerales(scanner, utilisateur);
+            String titre=infosGenerales[0];
+            String description=infosGenerales[1];
+            String [] infosPretMateriel=this.choixInformationsPretMateriel(scanner, utilisateur);
+            String nomPhoto=infosPretMateriel[0];
+            String etatInitial=infosPretMateriel[1];
 
             System.out.println("Informations précises pour le livre");
-            // a rajouter
+            System.out.println("Quel est le titre du livre ?");
+            String titreLivre=scanner.nextLine();
+            System.out.println("Quel est l'auteur du livre ?");
+            String auteurLivre=scanner.nextLine();
+
+            // creation du post
         }
 
         if (choix_materiel.equals("A")){
             System.out.println("Vous avez choisi de proposer autre chose");
-            this.choixInformationsGenerales(scanner, utilisateur);
-            this.choixInformationsPretMateriel(scanner, utilisateur);
+            String[] infosGenerales=this.choixInformationsGenerales(scanner, utilisateur);
+            String titre=infosGenerales[0];
+            String description=infosGenerales[1];
+            String [] infosPretMateriel=this.choixInformationsPretMateriel(scanner, utilisateur);
+            String nomPhoto=infosPretMateriel[0];
+            String etatInitial=infosPretMateriel[1];
 
-            System.out.println("Informations précises pour autre");
-            // a rajouter
+            // creation du post
         }
 
     }
 
     public void creerInformation(Scanner scanner, User utiliateur){
         System.out.println("Création d'un post d'information");
-        this.choixInformationsGenerales(scanner, utiliateur);
+        String[] infosGenerales = this.choixInformationsGenerales(scanner, utilisateur);
+        String titre=infosGenerales[0];
+        String description=infosGenerales[1];
+        // creation du post
     }
 
     public void creerEvenement(Scanner scanner, User utilisateur){
@@ -208,7 +266,6 @@ public class Feed {
         String adresse=scanner.nextLine();
         System.out.println("Combien de personne peut accueillir l'évènement ?");
         String nombre=scanner.nextLine();
-
         // création du post
 
     }
@@ -237,29 +294,17 @@ public class Feed {
 
     }
 
-    public void choixInformationsPretMateriel(Scanner scanner, User utilisateur){
+    public String[] choixInformationsPretMateriel(Scanner scanner, User utilisateur){
         System.out.println("Informations sur le prêt de materiel :");
+        System.out.println("Quelle est le nom de la photo que vous voulez rajouter ?");
+        String nomPhoto=scanner.nextLine();
+        System.out.println("Quel est l'état initial du matériel ?");
+        String etatInitial=scanner.nextLine();
 
+        return new String[]{nomPhoto, etatInitial};
     }
 
 
-
-
-    /////////////////////////////////////////////////////////////
-    public void addListener(NotificationListener listener) {
-        listeners.add(listener);
-    }
-
-    public void removeListener(NotificationListener listener) {
-        listeners.remove(listener);
-    }
-
-    public void notifyListeners(String message) {
-        NotificationEvent event = new NotificationEvent(message);
-        for (NotificationListener listener : listeners) {
-            listener.receiveNotif(event);
-        }
-    }
 
 }
 
