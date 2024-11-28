@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App implements NotificationListener {
     public static void main(String[] args) throws Exception {
         // Create a UserFactory instance
-        UserFactory userFactory = new UserFactory();
+        User userFactory = new UserFactory();
 
         System.err.println(" ");
 
@@ -27,5 +27,11 @@ public class App implements NotificationListener {
 
         // Delete a profile
         userFactory.supprimerProfil(student);
+    }
+
+    @Override
+    public void receiveNotif(NotificationEvent event) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'receiveNotif'");
     }
 }

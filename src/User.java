@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class UserFactory {
+abstract class User {
     private String nom;
     private String prenom;
     private String mail;
     private List<Message> messagesRecus;
     private List<Post> wishList;
 
-    public UserFactory(String nom, String prenom, String mail) {
+    public User(String nom, String prenom, String mail) {
         this.nom = nom;
         this.prenom = prenom;
         this.mail = mail;

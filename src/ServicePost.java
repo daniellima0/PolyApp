@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.util.List;
 
-public class ServicePost extends PostFactory{
+public class ServicePost extends Post{
     protected Date date;
     protected String adresse;
     protected int nb_personnes;
@@ -17,12 +17,6 @@ public class ServicePost extends PostFactory{
     public boolean hasPermission(User user) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'hasPermission'");
-    }
-
-    @Override
-    public void createPost() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createPost'");
     }
 
     // Getters and Setters
@@ -41,4 +35,5 @@ public class ServicePost extends PostFactory{
     public void set_wishlist(boolean wishlist){
         this.wishlist=wishlist;
     }
+
 }
