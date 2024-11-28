@@ -1,12 +1,8 @@
-
-import java.util.List;
 import java.util.Scanner;
 
-import javax.management.NotificationListener;
-
 public class Feed {
-    Scanner scanner = new Scanner(System.in);
     private User utilisateur;
+    private Scanner scanner=new Scanner(System.in);
     private List<Post> posts;
 
     public Feed(User u){

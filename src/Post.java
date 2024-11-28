@@ -16,10 +16,6 @@ abstract class Post {
         return "post#" + counter++;
     }
 
-    // Abstract method for permission verification
-    public abstract boolean hasPermission(User user);
-
-
     // Getters and Setters
     public String getTitre() {
         return titre;
