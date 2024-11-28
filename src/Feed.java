@@ -3,9 +3,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Feed {
-    User utilisateur;
-    Scanner scanner = new Scanner(System.in);
-    private final List<NotificationListener> listeners = new ArrayList<>();
+    private User utilisateur;
+    private Scanner scanner = new Scanner(System.in);
+
+    public Feed(User u){
+        this.utilisateur=u;
+    }
 
     public void feedApp(){
         System.out.println("Vous vous trouvez dans le feed");

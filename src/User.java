@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class User {
+public abstract class User implements Observer{
     private String nom;
     private String prenom;
     private String mail;
@@ -41,8 +41,36 @@ abstract class User {
         return messagesRecus;
     }
 
+    public void likePost(Post post) { 
+        addToWishlist(post); 
+    } 
+    
+    private void addToWishlist(Post post) { 
+        this.wishList.add(post); 
+        System.out.println(this.nom + " a ajouté le post à la wishlist : " + post); 
+    }
+   
+    @Override 
+    public void update(NotificationEvent event) {
+        if (event.getType().equals("MESSAGE")){
+            System.out.println(this.nom + " a reçu un message"); 
+            this.messagesRecus.add(new Message (event.getMessage()));
+        }else if (event.getType().equals("POST")){
+            Post post = (Post) event.getPost(); 
+            System.out.println(this.nom + " a reçu une notification de nouveau post : " + post); 
+        }
+
+    }
+
+    public void envoyerMessage (User destinataire, Message m){
+        destinataire.update(new NotificationEvent(m.toString(), NotificationEvent.MESSAGE_RECEIVED));
+    }
+
     public List<Post> getWishList() {
-        return wishList;
+        for (int i=0; i<wishList.size();i++){
+            this.wishList.get(i).toString();
+        }
+        return this.wishList;
     }
 
     public void setNom(String nom) {
@@ -61,8 +89,9 @@ abstract class User {
         this.messagesRecus = messagesRecus;
     }
 
-    public void setPostsAimees(List<Post> wishList) {
+    public void setWishlist(List<Post> wishList) {
         this.wishList = wishList;
     }
 
 }
+    

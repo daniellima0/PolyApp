@@ -1,5 +1,11 @@
-// Ce fichier doit être supprimé et remplacé par le vrai fichier Messages.java
-
 public class Message {
+    private String message;
 
+    public Message (String message){
+        this.message=message;
+    }
+
+    public String toString(){
+        return this.message;
+    }
 }

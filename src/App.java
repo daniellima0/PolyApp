@@ -1,37 +1,98 @@
+import java.util.ArrayList;
+import java.sql.Date;
+import java.util.List;
 import java.util.Scanner;
 
-public class App implements NotificationListener {
+public class App {
     public static void main(String[] args) throws Exception {
-        // Create a UserFactory instance
-        User user = new User();
+        NotificationService service = new NotificationService();
+    
+        User daniel = new Student("Lima", "Daniel", "daniel@gmail.com", "M1", 2021, true);
+        //daniel.getInfoProfil();
 
-        System.err.println(" ");
+        User alice = new Student("Wonderland", "Alice", "alice@gmail.com", "M2", 2024, false); 
+        User bob = new Student("LeBricoleur", "Alice", "bob@gmail.com", "L2", 2024, false); 
+        User axelle = new Student("Roy","Axelle",  "axroy@gmail.com", "M1", 2021, false);
+        User emma = new Student("RR","Emma",  "emrr@gmail.com", "M1", 2021, false);
 
-        // Create a Student profile
-        User student = user.creerProfil("STUDENT", "Daniel", "Lima", "daniellima@gmail.com", "Promo2024", 2,
-                true, null);
-        System.out.println(student.getInfoProfil());
+        service.addObserver(axelle); 
+        service.addObserver(bob); 
+        service.addObserver(emma);
 
-        // Create a BDE profile
-        User bde = user.creerProfil("BDE", "Henrique", "Barretto", "henrique@gmail.com", null, 0, false, null);
-        System.out.println(bde.getInfoProfil());
+        List<User> users = new ArrayList<>();
+        users.add(daniel);
+        users.add(bob);
+        users.add(axelle);
+        users.add(emma);
 
-        // Create an Admin profile
-        User admin = user.creerProfil("ADMIN", "Francielle", "Cardoso", "francielle@gmail.com", null, 0, false,
-                "IT Manager");
-        System.out.println(admin.getInfoProfil());
-
-        // Create a Post and associate it with a user
-        Post post = new Post("Welcome to our platform!");
-        user.creerPost(post);
-
-        // Delete a profile
-        user.supprimerProfil(student);
+        Post p1 = new InformationPost("Gala Polytech", "Grand retour du Gala de Polytehc !");
+        Post p2 = new PretLivre("Voyage au centre de la terre", "Livre en très bon état! Je veux le récupérer après !", "photo", "Neuf", "Voyage au centre de la Terre", "Jules Verne");
+        Post p3 = new ServiceCours("Cours de mathématiques", "Elève en 4ème année de cycle ingénieur propose des cours de math", "2024/12/20", "87 Avenue de Genève, Annecy", 1, "Mathématiques");
+        String titre, String description, Date date, String adresse, int nb_personnes, String matiere
+        List <Post> wl=new ArrayList<>();
+        wl.add(p2);
+        alice.setWishlist(wl);
+        List<Message>messages=new ArrayList<>();
+        messages.add(new Message("bonjour"));  
+        messages.add(new Message("test1"));
+        messages.add(new Message("test2"));  
+        alice.setMessagesRecus(messages);
+        creerApp(alice, users);
     }
 
-    @Override
-    public void receiveNotif(NotificationEvent event) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'receiveNotif'");
+    
+    public static void creerApp(User u, List<User> users) {
+        Scanner scanner = new Scanner(System.in);
+        Messagerie mess = new Messagerie(u, users);
+        Profil profil = new Profil(u);
+        Wishlist wl = new Wishlist(u);
+        Feed fe = new Feed(u);
+
+        System.out.println("Bienvenue dans PolyApp");
+
+        while (true) {
+            System.out.println("Pour accéder au menu, tapez M (ou tapez Q pour quitter)");
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("M")) {
+                afficherMenu(scanner, mess, profil, wl, fe);
+            } else if (input.equalsIgnoreCase("Q")) {
+                System.out.println("Au revoir !");
+                break; // Quitte la boucle et termine le programme
+            } else {
+                System.out.println("Entrée invalide, veuillez réessayer.");
+            }
+        }
     }
+
+    public static void afficherMenu(Scanner scanner, Messagerie mess, Profil profil, Wishlist wl, Feed fe) {
+        while (true) {
+            System.out.println("Nous sommes dans le menu : ");
+            System.out.println("- pour accéder aux informations du profil, tapez P");
+            System.out.println("- pour accéder à la messagerie, tapez M");
+            System.out.println("- pour accéder au feed, tapez F");
+            System.out.println("- pour accéder à la wishlist, tapez W");
+            System.out.println("- pour retourner au menu principal, tapez R");
+
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("P")) {
+                profil.profilApp();
+            } else if (input.equalsIgnoreCase("M")) {
+                mess.messagerieApp();
+            } else if (input.equalsIgnoreCase("F")) {
+                fe.feedApp();
+                fe.addPost("Un nouveau post génial !");
+            } else if (input.equalsIgnoreCase("W")) {
+                wl.wishlistApp();
+            } else if (input.equalsIgnoreCase("R")) {
+                break; // Retourne au menu principal
+            } else {
+                System.out.println("Entrez une lettre valable.");
+            }
+        }
+    }
+
+
+
 }
