@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class PretVetement extends PretMaterielPost {
     protected String taille;
 

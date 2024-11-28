@@ -1,11 +1,9 @@
-import java.util.Date;
-
 public class ServiceCovoiturage extends ServicePost{;
     private String adresseArrivee;
-    private Date heureDepart;
+    private String heureDepart;
 
-    public ServiceCovoiturage(String titre, String description, boolean soutient, List<User> publicUsers, Date date, String adresse, int nb_personnes, String adresse_depart, String adresse_arrivee, Date heure_depart){
-        super(titre, description, soutient, publicUsers, date, adresse, nb_personnes);
+    public ServiceCovoiturage(String titre, String description, String date, String adresse, int nb_personnes, String adresse_arrivee, String heure_depart){
+        super(titre, description, date, adresse, nb_personnes);
         this.adresseArrivee=adresse_arrivee;
         this.heureDepart=heure_depart;
     }
@@ -15,7 +13,7 @@ public class ServiceCovoiturage extends ServicePost{;
         return this.adresseArrivee;
     }
 
-    public Date getHeureDepart(){
+    public String getHeureDepart(){
         return this.heureDepart;
     }
 

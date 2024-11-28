@@ -126,6 +126,8 @@ public class Feed {
             String matiere=scanner.nextLine();
 
             // creation du post
+            ServiceCours post_cours=new ServiceCours(titre, description, date, adresse, nbPersonnes, matiere);
+            System.out.println("Le post a été créé");
         }
 
         if (choix_service.equals("V")){
@@ -141,10 +143,11 @@ public class Feed {
             System.out.println("Informations précises pour le covoiturage");
             System.out.println("Quelle est l'adresse d'arrivée ?");
             String adresseArrivee=scanner.nextLine();
-            System.out.println("Quelle est l'heure d'arrivée ?");
-            String heureArrivee=scanner.nextLine();
+            System.out.println("Quelle est l'heure de départ ?");
+            String heureDepart=scanner.nextLine();
 
             // creation du post
+            ServiceCovoiturage post_covoiturage=new ServiceCovoiturage(titre, description, date, adresse, nbPersonnes, adresseArrivee,heureDepart);
         }
 
 
@@ -175,7 +178,8 @@ public class Feed {
             System.out.println("Quelles est la taille du vêtement ?");
             String taille=scanner.nextLine();
 
-            // creation post
+            // creation du post
+            PretVetement pret_vetement=new PretVetement(titre, description, nomPhoto, etatInitial, taille);
             
         }
 
@@ -195,6 +199,8 @@ public class Feed {
             String sport=scanner.nextLine();
 
             // creation du post
+            PretMaterielSport materiel_sport=new PretMaterielSport(titre, description, nomPhoto, etatInitial, taille, sport);
+        
         }
 
         if (choix_materiel.equals("M")){
@@ -213,6 +219,7 @@ public class Feed {
             String duree=scanner.nextLine();
 
             // creation du post
+            PretLogement logement=new PretLogement(titre, description, nomPhoto, etatInitial, adresse, duree);
         }
 
         if (choix_materiel.equals("L")){
@@ -228,9 +235,10 @@ public class Feed {
             System.out.println("Quel est le titre du livre ?");
             String titreLivre=scanner.nextLine();
             System.out.println("Quel est l'auteur du livre ?");
-            String auteurLivre=scanner.nextLine();
+            String auteur=scanner.nextLine();
 
             // creation du post
+            PretLivre livre=new PretLivre(titre, description, nomPhoto, etatInitial, titre, auteur);
         }
 
         if (choix_materiel.equals("A")){
@@ -243,6 +251,7 @@ public class Feed {
             String etatInitial=infosPretMateriel[1];
 
             // creation du post
+            PretAutre autre=new PretAutre(titre, description, nomPhoto, etatInitial);
         }
 
     }
@@ -252,7 +261,9 @@ public class Feed {
         String[] infosGenerales = this.choixInformationsGenerales(scanner, utilisateur);
         String titre=infosGenerales[0];
         String description=infosGenerales[1];
+
         // creation du post
+        InformationPost info=new InformationPost(titre, description);
     }
 
     public void creerEvenement(Scanner scanner, User utilisateur){
@@ -265,8 +276,10 @@ public class Feed {
         System.out.println("Quelle est l'adresse de l'évènement ?");
         String adresse=scanner.nextLine();
         System.out.println("Combien de personne peut accueillir l'évènement ?");
-        String nombre=scanner.nextLine();
+        int nombre=Integer.parseInt(scanner.nextLine());
+
         // création du post
+        EvenementPost evenement=new EvenementPost(titre, description, date, adresse, nombre);
 
     }
 

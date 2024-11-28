@@ -1,14 +1,13 @@
-import java.util.Date;
-import java.util.List;
-
 public class EvenementPost extends Post{
-    private Date date;
+    private String date;
     private String adresse;
-    private boolean wishlist;
     private int nbPersonnes;
 
-    public EvenementPost(String titre, String description, boolean soutient, List<User> publicUsers){
-     super(titre, description, soutient, publicUsers);   
+    public EvenementPost(String titre, String description, String date, String adresse, int nbPersonnes){
+     super(titre, description);  
+     this.date=date;
+     this.adresse=adresse;
+     this.nbPersonnes=nbPersonnes; 
     }
 
     @Override
@@ -22,7 +21,7 @@ public class EvenementPost extends Post{
     }
 
     // Getters and Setters
-    public Date getDate(){
+    public String getDate(){
         return this.date;
     }
 
@@ -32,14 +31,6 @@ public class EvenementPost extends Post{
 
     public int getNbPersonnes(){
         return this.nbPersonnes;
-    }
-
-    public void setWishlist(boolean wishlist){
-        this.wishlist = wishlist;
-    }
-
-    public boolean isInWishList(){
-        return this.wishlist;
     }
 
 }

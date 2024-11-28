@@ -1,12 +1,9 @@
-import java.util.Date;
-import java.util.List;
-
 public class ServicePost extends Post{
-    private Date date;
+    private String date;
     private String adresse;
     private int nbPersonnes;
 
-    public ServicePost(String titre, String description,  Date date, String adresse, int nb_personnes){
+    public ServicePost(String titre, String description,  String date, String adresse, int nb_personnes){
         super(titre, description);
         this.date=date;
         this.nbPersonnes=nb_personnes;
@@ -23,7 +20,7 @@ public class ServicePost extends Post{
     }
 
     // Getters and Setters
-    public Date getDate(){
+    public String getDate(){
         return this.date;
     }
 
