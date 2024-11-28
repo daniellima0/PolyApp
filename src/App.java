@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,25 +27,31 @@ public class App {
         Post p1 = new InformationPost("Gala Polytech", "Grand retour du Gala de Polytehc !");
         Post p2 = new PretLivre("Voyage au centre de la terre", "Livre en très bon état! Je veux le récupérer après !", "photo", "Neuf", "Voyage au centre de la Terre", "Jules Verne");
         Post p3 = new ServiceCours("Cours de mathématiques", "Elève en 4ème année de cycle ingénieur propose des cours de math", "2024/12/20", "87 Avenue de Genève, Annecy", 1, "Mathématiques");
-        String titre, String description, Date date, String adresse, int nb_personnes, String matiere
+        
         List <Post> wl=new ArrayList<>();
         wl.add(p2);
         alice.setWishlist(wl);
+
+        List <Post> posts = new ArrayList<>();
+        posts.add(p1);
+        posts.add(p2);
+        posts.add(p3);
+
         List<Message>messages=new ArrayList<>();
         messages.add(new Message("bonjour"));  
         messages.add(new Message("test1"));
         messages.add(new Message("test2"));  
         alice.setMessagesRecus(messages);
-        creerApp(alice, users);
+        creerApp(alice, users, posts);
     }
 
     
-    public static void creerApp(User u, List<User> users) {
+    public static void creerApp(User u, List<User> users, List <Post> posts) {
         Scanner scanner = new Scanner(System.in);
         Messagerie mess = new Messagerie(u, users);
         Profil profil = new Profil(u);
         Wishlist wl = new Wishlist(u);
-        Feed fe = new Feed(u);
+        Feed fe = new Feed(u, posts);
 
         System.out.println("Bienvenue dans PolyApp");
 
@@ -82,7 +87,6 @@ public class App {
                 mess.messagerieApp();
             } else if (input.equalsIgnoreCase("F")) {
                 fe.feedApp();
-                fe.addPost("Un nouveau post génial !");
             } else if (input.equalsIgnoreCase("W")) {
                 wl.wishlistApp();
             } else if (input.equalsIgnoreCase("R")) {

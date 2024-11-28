@@ -1,11 +1,14 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Feed {
     private User utilisateur;
     private Scanner scanner=new Scanner(System.in);
+    private List<Post> posts;
 
-    public Feed(User u){
+    public Feed(User u, List <Post> p){
         this.utilisateur=u;
+        this.posts=p;
     }
 
     public void feedApp(){
@@ -15,7 +18,7 @@ public class Feed {
         String input=scanner.nextLine();
         
         if (input.equals("P")){ 
-            this.creerPost(scanner, utilisateur);
+            this.creerPost(scanner, this.utilisateur);
         }
     }
 
