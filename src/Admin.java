@@ -6,6 +6,14 @@ public class Admin extends User {
         this.metier = metier;
     }
 
+    public void getInfoProfil() {
+        System.out.println("Nom : " + getNom());
+        System.out.println("Prenom : " + getPrenom());
+        System.out.println("Mail : " + getMail());
+        System.out.println("Métier : " + getMetier());
+
+    }
+
     public String getType(){
         return "Admin";
     }

@@ -16,7 +16,7 @@ public class Feed {
     public void feedApp(){
         System.out.println("Vous vous trouvez dans le feed");
         System.out.println("Pour creer un post, tapez P");
-        System.out.println("Pour accéder au feed (tous les posts), tapez F");
+        System.out.println("Pour accéder à l'affichage des posts, tapez F");
         String input=scanner.nextLine();
         
         if (input.equalsIgnoreCase("P")){ 
@@ -30,7 +30,7 @@ public class Feed {
         for (Post post : posts){
             System.out.println(post.toString());
             if (post instanceof PretMaterielPost){
-                System.out.println("Voulez-vous liker le post? Si oui tapez L sinon P");
+                System.out.println("Voulez-vous liker le post? Si oui tapez L sinon tapez S pour suivant");
                 String like=scanner.nextLine();
 
                 if(like.equalsIgnoreCase("L")){

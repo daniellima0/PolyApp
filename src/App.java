@@ -6,13 +6,13 @@ public class App {
     public static void main(String[] args) throws Exception {
         NotificationService service = new NotificationService();
     
-        User daniel = new Student("Lima", "Daniel", "daniel@gmail.com", "M1", 2021, true);
+        User daniel = new Student("Lima", "Daniel", "daniel@gmail.com", "IDU", 4, true);
         //daniel.getInfoProfil();
 
-        User alice = new Student("Wonderland", "Alice", "alice@gmail.com", "M2", 2024, false); 
-        User bob = new Student("LeBricoleur", "Alice", "bob@gmail.com", "L2", 2024, false); 
-        User axelle = new Student("Roy","Axelle",  "axroy@gmail.com", "M1", 2021, false);
-        User emma = new Student("RR","Emma",  "emrr@gmail.com", "M1", 2021, false);
+        User alice = new Student("Wonderland", "Alice", "alice@gmail.com", "MM", 3, false); 
+        User bob = new Student("LeBricoleur", "Alice", "bob@gmail.com", "Peip", 1, false); 
+        User axelle = new Student("Roy","Axelle",  "axroy@gmail.com", "IDU", 4, false);
+        User emma = new Student("RR","Emma",  "emrr@gmail.com", "IDU", 4, true);
 
         User sorana = new Admin("Cimpan", "Sorana", "sorana.cimpan@gmail.com", "professeur");
         User woofy = new BDE("BDE", "WoofyAnnecy", "bde.annecy@gmail.com");

@@ -17,9 +17,9 @@ public abstract class User implements Observer{
     }
 
     public void getInfoProfil() {
-        System.out.println("Nom:" + nom);
-        System.out.println("Prenom:" + prenom);
-        System.out.println("Mail:" + mail);
+        System.out.println("Nom : " + nom);
+        System.out.println("Prenom : " + prenom);
+        System.out.println("Mail : " + mail);
     }
 
     public abstract String getType(); 

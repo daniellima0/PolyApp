@@ -12,12 +12,15 @@ public class Student extends User {
 
     @Override
     public void getInfoProfil() {
-        System.out.println("Nom:" + getNom());
-        System.out.println("Prenom:" + getPrenom());
-        System.out.println("Mail:" + getMail());
-        System.out.println("Promo:" + promo);
-        System.out.println("Annee:" + annee);
-        System.out.println("Is Delegate:" + estDelegue);
+        System.out.println("Nom : " + getNom());
+        System.out.println("Prenom : " + getPrenom());
+        System.out.println("Mail : " + getMail());
+        System.out.println("Promo : " + promo);
+        System.out.println("Annee : " + annee);
+        if (estDelegue){
+            System.out.println("est délégué");
+        }
+
     }
 
     public String getType(){
