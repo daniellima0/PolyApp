@@ -1,20 +1,20 @@
 import java.util.List;
 
 public class PretLivre extends PretMaterielPost {
-    protected String titre_livre;
-    protected String auteur;
+    private String titreLivre;
+    private String auteur;
 
     public PretLivre(String titre, String description, boolean soutient, List<User> publicUsers, String photo, String etat_initial, String titre_livre, String auteur){
         super(titre, description, soutient, publicUsers, photo, etat_initial);
-        this.titre_livre=titre_livre;
+        this.titreLivre=titre_livre;
         this.auteur=auteur;
     }
 
-    public String get_titre_livre(){
-        return this.titre_livre;
+    public String getTitreLivre(){
+        return this.titreLivre;
     }
 
-    public String get_auteur(){
+    public String getAuteur(){
         return this.auteur;
     }
 }

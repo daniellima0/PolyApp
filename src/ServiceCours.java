@@ -6,11 +6,11 @@ public class ServiceCours extends ServicePost{
 
     public ServiceCours(String titre, String description, boolean soutient, List<User> publicUsers, Date date, String adresse, int nb_personnes, String matiere ){
         super(titre, description, soutient, publicUsers, date, adresse, nb_personnes);
-        this.matiere = matiere;
+        this.matiere=matiere;
     }
 
     // Getters
-    public String get_matiere(){
+    public String getMatiere(){
         return this.matiere;
     }
 }

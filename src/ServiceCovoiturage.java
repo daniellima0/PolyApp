@@ -2,28 +2,28 @@ import java.util.Date;
 import java.util.List;
 
 public class ServiceCovoiturage extends ServicePost{
-    protected String adresse_depart;
-    protected String adresse_arrivee;
-    protected Date heure_depart;
+    protected String adresseDepart;
+    protected String adresseArrivee;
+    protected Date heureDepart;
 
     public ServiceCovoiturage(String titre, String description, boolean soutient, List<User> publicUsers, Date date, String adresse, int nb_personnes, String adresse_depart, String adresse_arrivee, Date heure_depart){
         super(titre, description, soutient, publicUsers, date, adresse, nb_personnes);
-        this.adresse_depart = adresse_depart;
-        this.adresse_arrivee=adresse_arrivee;
-        this.heure_depart=heure_depart;
+        this.adresseDepart=adresse_depart;
+        this.adresseArrivee=adresse_arrivee;
+        this.heureDepart=heure_depart;
     }
 
     // Getters
-    public String get_adresse_depart(){
-        return this.adresse_depart;
+    public String getAdresseDepart(){
+        return this.adresseDepart;
     }
 
-    public String get_adresse_arrivee(){
-        return this.adresse_arrivee;
+    public String getAdresseArrivee(){
+        return this.adresseArrivee;
     }
 
-    public Date get_heure_depart(){
-        return this.heure_depart;
+    public Date getHeureDepart(){
+        return this.heureDepart;
     }
 
 }

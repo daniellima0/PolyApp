@@ -22,6 +22,8 @@ abstract class User {
         System.out.println("Mail:" + mail);
     }
 
+    public abstract String getType(); //
+
     // Getters and Setters
     public String getNom() {
         return nom;
@@ -62,4 +64,5 @@ abstract class User {
     public void setPostsAimees(List<Post> wishList) {
         this.wishList = wishList;
     }
+
 }

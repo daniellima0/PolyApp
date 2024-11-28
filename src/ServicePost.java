@@ -2,38 +2,46 @@ import java.util.Date;
 import java.util.List;
 
 public class ServicePost extends Post{
-    protected Date date;
-    protected String adresse;
-    protected int nb_personnes;
-    protected boolean wishlist; //On peut mettre un pret de matériel dans la wishlist
+    private Date date;
+    private String adresse;
+    private int nbPersonnes;
+    private boolean wishlist; //On peut mettre un pret de matériel dans la wishlist
 
     public ServicePost(String titre, String description, boolean soutient, List<User> publicUsers, Date date, String adresse, int nb_personnes){
         super(titre, description, soutient, publicUsers);
         this.date=date;
-        this.nb_personnes=nb_personnes;
+        this.nbPersonnes=nb_personnes;
     }
 
     @Override
     public boolean hasPermission(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'hasPermission'");
+        if (user.getType().equals("Etudiant") || user.getType().equals("Delegue")){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     // Getters and Setters
-    public Date get_date(){
+    public Date getDate(){
         return this.date;
     }
 
-    public String get_adresse(){
+    public String getAdresse(){
         return this.adresse;
     }
 
-    public int get_nb_personnes(){
-        return this.nb_personnes;
+    public int getNbPersonnes(){
+        return this.nbPersonnes;
     }
 
-    public void set_wishlist(boolean wishlist){
+    public void setWishlist(boolean wishlist){
         this.wishlist=wishlist;
+    }
+
+    public boolean isInWishList(){
+        return this.wishlist;
     }
 
 }

@@ -7,7 +7,13 @@ public class InformationPost extends Post{
 
     @Override
     public boolean hasPermission(User user){
-        return publicUsers.contains(user);
+        if (user.getType().equals("BDE") || user.getType().equals("Delegue") || user.getType().equals("Admin")){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
+
 
 }
