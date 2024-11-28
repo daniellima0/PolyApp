@@ -1,43 +1,47 @@
-// Concrete User Class: Student
-public class Student implements User {
-    private String nom;
-    private String prenom;
-    private String mail;
-    /* Additional attributes specific to exclusive students: */
-    private boolean isDelegate;
+public class Student extends User {
+    private boolean estDelegue;
     private String promo;
     private int annee;
-    /* private Post[] likes; */
 
-    public Student(String nom, String prenom, String mail, String promo, int annee, boolean isDelegate) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.mail = mail;
+    public Student(String nom, String prenom, String mail, String promo, int annee, boolean estDelegue) {
+        super(nom, prenom, mail);
         this.promo = promo;
         this.annee = annee;
-        this.isDelegate = isDelegate;
-    }
-
-    /* Getters and Setters: */
-    @Override
-    public String getInfoProfil() {
-        return "Student: Nom " + nom + " Prenom " + prenom + " Mail " + mail + " Promo " + promo + " Annee " + annee + " Delegue " + isDelegate;
+        this.estDelegue = estDelegue;
     }
 
     @Override
-    public String getNom() {
-        return nom;
+    public void getInfoProfil() {
+        System.out.println("Nom:" + getNom());
+        System.out.println("Prenom:" + getPrenom());
+        System.out.println("Mail:" + getMail());
+        System.out.println("Promo:" + promo);
+        System.out.println("Annee:" + annee);
+        System.out.println("Is Delegate:" + estDelegue);
     }
 
-    @Override
-    public String getPrenom() {
-        return prenom;
+    // Getters and Setters
+    public boolean EstDelegue() {
+        return estDelegue;
     }
 
-    @Override
-    public String getMail() {
-        return mail;
+    public String getPromo() {
+        return promo;
     }
 
-    // Additional methods specific to Student can be added here.
+    public int getAnnee() {
+        return annee;
+    }
+
+    public void setEstDelegue(boolean estDelegue) {
+        this.estDelegue = estDelegue;
+    }
+
+    public void setPromo(String promo) {
+        this.promo = promo;
+    }
+
+    public void setAnnee(int annee) {
+        this.annee = annee;
+    }
 }
