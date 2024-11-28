@@ -12,8 +12,8 @@ public class Wishlist {
         List<Post> wl=u.getWishList();
         
         for (Post p : wl) { 
-            p.getTitre();
-            p.getDescription();
+            System.out.println(p.getTitre());
+            System.out.println(p.getDescription());
         }
     }   
 }

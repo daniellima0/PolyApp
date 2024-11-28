@@ -89,7 +89,7 @@ public abstract class User implements Observer{
         this.messagesRecus = messagesRecus;
     }
 
-    public void setPostsAimees(List<Post> wishList) {
+    public void setWishlist(List<Post> wishList) {
         this.wishList = wishList;
     }
 

@@ -1,10 +1,7 @@
-import java.util.List;
 
 abstract class Post {
     private String titre;
     private String description;
-    private boolean soutient; // like
-    private List<User> publicUsers;
     private String lien; // Unique identifier for the post
 
     private static int counter = 1; // Static counter to track the number of posts created
@@ -39,23 +36,6 @@ abstract class Post {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public boolean getSoutient() {
-        return soutient;
-    }
-
-    public void setSoutient(boolean soutient) {
-        this.soutient = soutient;
-    }
-
-    public List<User> getPublicUsers() {
-        return publicUsers;
-    }
-
-    public void setPublicUsers(List<User> publicUsers) {
-        this.publicUsers = publicUsers;
-    }
-
     public String getLien() {
         return lien;
     }
