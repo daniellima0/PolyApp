@@ -1,4 +1,3 @@
-
 public class PretVetement extends PretMaterielPost {
     protected String taille;
 

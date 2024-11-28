@@ -1,4 +1,3 @@
-
 public class ServicePost extends Post{
     private String date;
     private String adresse;

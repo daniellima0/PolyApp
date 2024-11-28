@@ -1,6 +1,5 @@
-
 public class ServiceCours extends ServicePost{
-    protected String matiere;
+    private String matiere;
 
     public ServiceCours(String titre, String description, String date, String adresse, int nb_personnes, String matiere ){
         super(titre, description,  date, adresse, nb_personnes);

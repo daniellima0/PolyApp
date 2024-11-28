@@ -1,4 +1,3 @@
-
 public class PretMaterielPost extends Post {
     protected String photo;
     protected String etatFinal;

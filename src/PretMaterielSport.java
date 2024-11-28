@@ -1,4 +1,3 @@
-
 public class PretMaterielSport extends PretMaterielPost {
     protected String taille;
     protected String sport;
