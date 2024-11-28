@@ -1,10 +1,10 @@
 import java.util.List;
 
-public class Logement extends PretMaterielPost {
+public class PretLogement extends PretMaterielPost {
     protected String adresse;
     protected String duree_location;
 
-    public Logement(String titre, String description, boolean soutient, List<User> publicUsers, String photo, String etat_initial, String adresse, String duree_location){
+    public PretLogement(String titre, String description, boolean soutient, List<User> publicUsers, String photo, String etat_initial, String adresse, String duree_location){
         super(titre, description, soutient, publicUsers, photo, etat_initial);
         this.adresse=adresse;
         this.duree_location=duree_location;
