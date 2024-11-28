@@ -7,7 +7,7 @@ public class ServiceCovoiturage extends ServicePost{
     protected Date heure_depart;
 
     public ServiceCovoiturage(String titre, String description, boolean soutient, List<User> publicUsers, Date date, String adresse, int nb_personnes, String adresse_depart, String adresse_arrivee, Date heure_depart){
-        super(titre, description, soutient, publicUsers, date, adresse, nb_personnes);
+        super(titre, description, soutient, date, adresse, nb_personnes);
         this.adresse_depart = adresse_depart;
         this.adresse_arrivee=adresse_arrivee;
         this.heure_depart=heure_depart;

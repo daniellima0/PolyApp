@@ -1,8 +1,7 @@
-import java.util.List;
 
 public class PretAutre extends Post {
-    public PretAutre(String titre, String description, boolean soutient, List<User> publicUsers){
-        super(titre, description, soutient, publicUsers);
+    public PretAutre(String titre, String description, boolean soutient){
+        super(titre, description, soutient);
     }
 
     @Override

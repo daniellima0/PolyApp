@@ -1,4 +1,3 @@
-import java.util.List;
 
 public class PretMaterielPost extends Post {
     protected String photo;
@@ -6,8 +5,8 @@ public class PretMaterielPost extends Post {
     protected String etat_initial;
     protected boolean wishlist; //On peut mettre un pret de matériel dans la wishlist
 
-    public PretMaterielPost(String titre, String description, boolean soutient, List<User> publicUsers, String photo, String etat_initial){
-        super(titre, description, soutient, publicUsers);
+    public PretMaterielPost(String titre, String description, boolean soutient, String photo, String etat_initial){
+        super(titre, description, soutient);
         this.etat_initial=etat_initial;
         this.photo=photo;
         this.etat_final=null;

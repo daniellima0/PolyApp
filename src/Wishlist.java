@@ -1,3 +1,6 @@
+
+import java.util.List;
+
 public class Wishlist {
     User u;
 
@@ -5,9 +8,12 @@ public class Wishlist {
         this.u=u;
     }
     public void wishlistApp(){
-        //A METTRE A JOUR
-
         System.out.println("Vous vous trouvez dans la wishlist");
-
+        List<Post> wl=u.getWishList();
+        
+        for (Post p : wl) { 
+            p.getTitre();
+            p.getDescription();
+        }
     }   
 }

@@ -6,8 +6,8 @@ public class EvenementPost extends Post{
     protected String adresse;
     protected int nb_personnes;
 
-    public EvenementPost(String titre, String description, boolean soutient, List<User> publicUsers){
-     super(titre, description, soutient, publicUsers);   
+    public EvenementPost(String titre, String description, boolean soutient){
+     super(titre, description, soutient);   
     }
 
     @Override

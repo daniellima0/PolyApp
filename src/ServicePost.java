@@ -1,5 +1,4 @@
 import java.util.Date;
-import java.util.List;
 
 public class ServicePost extends Post{
     protected Date date;
@@ -7,8 +6,8 @@ public class ServicePost extends Post{
     protected int nb_personnes;
     protected boolean wishlist; //On peut mettre un pret de matériel dans la wishlist
 
-    public ServicePost(String titre, String description, boolean soutient, List<User> publicUsers, Date date, String adresse, int nb_personnes){
-        super(titre, description, soutient, publicUsers);
+    public ServicePost(String titre, String description, boolean soutient, Date date, String adresse, int nb_personnes){
+        super(titre, description, soutient);
         this.date=date;
         this.nb_personnes=nb_personnes;
     }

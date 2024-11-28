@@ -1,11 +1,9 @@
-import java.util.List;
-
 public class PretLivre extends PretMaterielPost {
     protected String titre_livre;
     protected String auteur;
 
-    public PretLivre(String titre, String description, boolean soutient, List<User> publicUsers, String photo, String etat_initial, String titre_livre, String auteur){
-        super(titre, description, soutient, publicUsers, photo, etat_initial);
+    public PretLivre(String titre, String description, boolean soutient, String photo, String etat_initial, String titre_livre, String auteur){
+        super(titre, description, soutient, photo, etat_initial);
         this.titre_livre=titre_livre;
         this.auteur=auteur;
     }

@@ -14,16 +14,9 @@ public class App {
         User axelle = new Student("Roy","Axelle",  "axroy@gmail.com", "M1", 2021, false);
         User emma = new Student("RR","Emma",  "emrr@gmail.com", "M1", 2021, false);
 
-        service.addObserver(alice); 
+        service.addObserver(axelle); 
         service.addObserver(bob); 
-        //service.createMessageNotification("Vous avez un nouveau message"); => faire en sorte que bob envoit un message ) Alice
-
-        /*PostFactory post1 = new ServiceCours("Cours de Mathématiques", "Cours de mathématiques pour un élèves de primaire", false, service.getObserver(), new java.sql.Date(2024/12/20), ); 
-        service.createPostNotification("Un nouveau post est disponible", post1);
-        PostFactory post2 = new Post(2, "Guide de survie en forêt"); 
-        service.createPostNotification("Un nouveau post est disponible", post2);
-        A revoir pour tester 
-        */ 
+        service.addObserver(emma);
 
         List<User> users = new ArrayList<>();
         users.add(daniel);
@@ -31,6 +24,7 @@ public class App {
         users.add(axelle);
         users.add(emma);
 
+        Post p1 = new InformationPost("Gala Polytech", "Grand retour du Gala de Polytehc !" , false);
         List<Message>messages=new ArrayList<>();
         messages.add(new Message("bonjour"));  
         messages.add(new Message("test1"));
