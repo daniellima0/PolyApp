@@ -43,8 +43,8 @@ public class App {
     public static void creerApp(User u, List<User> users) {
         Scanner scanner = new Scanner(System.in);
         Messagerie mess = new Messagerie(u, users);
-        Profil profil = new Profil();
-        Wishlist wl = new Wishlist();
+        Profil profil = new Profil(u);
+        Wishlist wl = new Wishlist(u);
         Feed fe = new Feed(u);
 
         System.out.println("Bienvenue dans PolyApp");
