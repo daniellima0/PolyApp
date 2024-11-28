@@ -25,6 +25,7 @@ public class App {
         users.add(emma);
 
         Post p1 = new InformationPost("Gala Polytech", "Grand retour du Gala de Polytehc !" , false);
+        
         List<Message>messages=new ArrayList<>();
         messages.add(new Message("bonjour"));  
         messages.add(new Message("test1"));
