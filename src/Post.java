@@ -39,4 +39,8 @@ abstract class Post {
     public void setLien(String lien) {
         this.lien = lien;
     }
+
+    public String toString(){
+        return this.titre +" : "+ this.description;
+    }
 }

@@ -22,7 +22,7 @@ public abstract class User implements Observer{
         System.out.println("Mail:" + mail);
     }
 
-    public abstract String getType(); //
+    public abstract String getType(); 
 
     // Getters and Setters
     public String getNom() {
@@ -45,7 +45,7 @@ public abstract class User implements Observer{
         addToWishlist(post); 
     } 
     
-    private void addToWishlist(Post post) { 
+    public void addToWishlist(Post post) { 
         this.wishList.add(post); 
         System.out.println(this.nom + " a ajouté le post à la wishlist : " + post); 
     }
