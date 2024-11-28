@@ -1,14 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         NotificationService service = new NotificationService();
     
-        User user = new Student("Daniel", "Lima", "daniel@gmail.com", "M1", 2021, true);
-        user.getInfoProfil();
+        User daniel = new Student("Lima", "Daniel", "daniel@gmail.com", "M1", 2021, true);
+        //daniel.getInfoProfil();
 
         User alice = new Student("Wonderland", "Alice", "alice@gmail.com", "M2", 2024, false); 
         User bob = new Student("LeBricoleur", "Alice", "bob@gmail.com", "L2", 2024, false); 
+        User axelle = new Student("Roy","Axelle",  "axroy@gmail.com", "M1", 2021, false);
+        User emma = new Student("RR","Emma",  "emrr@gmail.com", "M1", 2021, false);
+
         service.addObserver(alice); 
         service.addObserver(bob); 
         //service.createMessageNotification("Vous avez un nouveau message"); => faire en sorte que bob envoit un message ) Alice
@@ -20,18 +25,27 @@ public class App {
         A revoir pour tester 
         */ 
 
-        creerApp();
+        List<User> users = new ArrayList<>();
+        users.add(daniel);
+        users.add(bob);
+        users.add(axelle);
+        users.add(emma);
+
+        List<Message>messages=new ArrayList<>();
+        messages.add(new Message("bonjour"));  
+        messages.add(new Message("test1"));
+        messages.add(new Message("test2"));  
+        alice.setMessagesRecus(messages);
+        creerApp(alice, users);
     }
 
     
-    public static void creerApp() {
-        User alice = new Student("Wonderland", "Alice", "alice@gmail.com", "M2", 2024, false); 
-
+    public static void creerApp(User u, List<User> users) {
         Scanner scanner = new Scanner(System.in);
-        Messagerie mess = new Messagerie();
+        Messagerie mess = new Messagerie(u, users);
         Profil profil = new Profil();
         Wishlist wl = new Wishlist();
-        Feed fe = new Feed(alice);
+        Feed fe = new Feed(u);
 
         System.out.println("Bienvenue dans PolyApp");
 

@@ -60,6 +60,10 @@ public abstract class User implements Observer{
 
     }
 
+    public void envoyerMessage (User destinataire, Message m){
+        destinataire.update(new NotificationEvent(m.toString(), NotificationEvent.MESSAGE_RECEIVED));
+    }
+
     public List<Post> getWishList() {
         for (int i=0; i<wishList.size();i++){
             this.wishList.get(i).toString();

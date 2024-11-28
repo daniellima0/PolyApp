@@ -1,4 +1,3 @@
-
 public class Message {
     private String message;
 
@@ -7,6 +6,6 @@ public class Message {
     }
 
     public String toString(){
-        return  this.message;
+        return this.message;
     }
 }
