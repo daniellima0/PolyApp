@@ -1,17 +1,20 @@
+
+import java.util.List;
+
 public class Feed {
     private User u;
+    private List<Post> posts;
 
     public Feed(User u){
         this.u=u;
     }
 
     public void feedApp(){
-        //A METTRE A JOUR
         System.out.println("Vous vous trouvez dans le feed");
 
     }
 
-    public void addPost(String post) {
+    public void creerPost(String post) {
         //A METTRE A JOUR
 
         // Logique pour ajouter un post dans le feed

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,7 +27,6 @@ public class App {
         Post p1 = new InformationPost("Gala Polytech", "Grand retour du Gala de Polytehc !");
         Post p2 = new PretLivre("Voyage au centre de la terre", "Livre en très bon état! Je veux le récupérer après !", "photo", "Neuf", "Voyage au centre de la Terre", "Jules Verne");
         Post p3 = new ServiceCours("Cours de mathématiques", "Elève en 4ème année de cycle ingénieur propose des cours de math", "2024/12/20", "87 Avenue de Genève, Annecy", 1, "Mathématiques");
-        String titre, String description, Date date, String adresse, int nb_personnes, String matiere
         List <Post> wl=new ArrayList<>();
         wl.add(p2);
         alice.setWishlist(wl);
