@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Feed {
     private User utilisateur;
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner=new Scanner(System.in);
 
     public Feed(User u){
         this.utilisateur=u;

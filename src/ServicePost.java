@@ -9,16 +9,6 @@ public class ServicePost extends Post{
         this.nbPersonnes=nb_personnes;
     }
 
-    @Override
-    public boolean hasPermission(User user) {
-        if (user.getType().equals("Etudiant") || user.getType().equals("Delegue")){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     // Getters and Setters
     public String getDate(){
         return this.date;

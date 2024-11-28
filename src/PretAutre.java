@@ -7,11 +7,4 @@ public class PretAutre extends Post {
         this.etatInitial=etat_initial;
     }
 
-    @Override
-    public boolean hasPermission(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'hasPermission'");
-    }
-
-
 }

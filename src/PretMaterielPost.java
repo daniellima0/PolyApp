@@ -10,16 +10,6 @@ public class PretMaterielPost extends Post {
         this.etatFinal=null;
     }
 
-    @Override
-    public boolean hasPermission(User user) {
-        if (user.getType().equals("Etudiant") || user.getType().equals("Delegue")){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public String getEtatInitial(){
         return this.etatInitial;
     }

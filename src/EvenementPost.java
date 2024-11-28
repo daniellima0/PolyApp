@@ -10,16 +10,6 @@ public class EvenementPost extends Post{
      this.nbPersonnes=nbPersonnes; 
     }
 
-    @Override
-    public boolean hasPermission(User user){
-        if (user.getType().equals("BDE")){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     // Getters and Setters
     public String getDate(){
         return this.date;
