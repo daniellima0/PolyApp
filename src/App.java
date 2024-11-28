@@ -114,12 +114,17 @@ public class App {
         }
 
         System.out.println("Connectez vous à votre profil en entrant votre prenom");
-        String prenom=scanner.nextLine();
+        System.out.println("Si votre compte n'existe pas, entrez 'C'");
+        String choix=scanner.nextLine();
 
+        if (choix.equals("C")){
+            creerCompte(users, scanner);
+        }
+        
         // verification de l'utilisateur
         User utilisateur_connecte=null;
         for(User user : users){
-            if(user.getPrenom().equals(prenom)){
+            if(user.getPrenom().equals(choix)){
                 utilisateur_connecte=user;
                 break;
             }
@@ -130,9 +135,63 @@ public class App {
             return choixUtilisateur(users, scanner);
         }
         else {
-            System.out.println("Connecté sur le compte de: " + utilisateur_connecte.getPrenom());
+            System.out.println("Connecté sur le compte de : " + utilisateur_connecte.getPrenom());
             return utilisateur_connecte;
         }
+
     }
 
+    public static void creerCompte(List<User> users, Scanner scanner){
+        System.out.println("Choisissez le type de votre compte :");
+        System.out.println("Tapez 1 pour Etudiant");
+        System.out.println("Tapez 2 pour Admin");
+        System.out.println("Tapez 3 pour BDE");
+        int choix = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Entrez votre prenom :");
+        String prenom = scanner.nextLine();
+        System.out.println("Entrez votre nom :");
+        String nom = scanner.nextLine();
+        System.out.println("Entrez votre mail :");
+        String mail = scanner.nextLine();
+
+        if (choix==1){
+            System.out.println("Entez votre promotion");
+            String promotion = scanner.nextLine();
+            System.out.println("En quelle année êtes vous ?");
+            int annee = scanner.nextInt();
+            scanner.nextLine();
+            boolean delegue=false;
+            System.out.println("Etes-vous un délégué (O/N) ?");
+            String reponse=scanner.nextLine();
+            if(reponse.equals("O")){
+                delegue=true;
+            }
+           
+            // création du compte
+            Student etudiant = new Student(nom, prenom, mail, promotion, annee, delegue);
+            System.out.println("Compte Etudiant créé avec succès");
+            users.add(etudiant);
+
+
+        }
+
+        if (choix==2){
+            System.out.println("Quel est votre métier ?");
+            String metier = scanner.nextLine();
+
+            // creation du compte
+            Admin nouveau_admin = new Admin(nom, prenom, mail, metier);
+            System.out.println("Compte Admin créé avec succès");
+            users.add(nouveau_admin);
+
+        }
+
+        if (choix==3){
+            BDE nouveau_bde= new BDE(nom, prenom, mail);
+            System.out.println("Compte BDE créé avec succès");
+            users.add(nouveau_bde);
+        }
+            
+    };
 }
