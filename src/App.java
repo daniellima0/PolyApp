@@ -14,15 +14,22 @@ public class App {
         User axelle = new Student("Roy","Axelle",  "axroy@gmail.com", "M1", 2021, false);
         User emma = new Student("RR","Emma",  "emrr@gmail.com", "M1", 2021, false);
 
+        User sorana = new Admin("Cimpan", "Sorana", "sorana.cimpan@gmail.com", "professeur");
+        User woofy = new BDE("BDE", "WoofyAnnecy", "bde.annecy@gmail.com");
+
         service.addObserver(axelle); 
         service.addObserver(bob); 
         service.addObserver(emma);
+        service.addObserver(sorana);
+        service.addObserver(woofy);
 
         List<User> users = new ArrayList<>();
         users.add(daniel);
         users.add(bob);
         users.add(axelle);
         users.add(emma);
+        users.add(sorana);
+        users.add(woofy);
 
         Post p1 = new InformationPost("Gala Polytech", "Grand retour du Gala de Polytehc !");
         Post p2 = new PretLivre("Voyage au centre de la terre", "Livre en très bon état! Je veux le récupérer après !", "photo", "Neuf", "Voyage au centre de la Terre", "Jules Verne");
@@ -42,18 +49,20 @@ public class App {
         messages.add(new Message("test1"));
         messages.add(new Message("test2"));  
         alice.setMessagesRecus(messages);
-        creerApp(alice, users, posts);
+        creerApp(users, posts);
     }
 
     
-    public static void creerApp(User u, List<User> users, List <Post> posts) {
-        Scanner scanner = new Scanner(System.in);
-        Messagerie mess = new Messagerie(u, users);
-        Profil profil = new Profil(u);
-        Wishlist wl = new Wishlist(u);
-        Feed fe = new Feed(u, posts);
-
+    public static void creerApp(List<User> users, List <Post> posts) {
         System.out.println("Bienvenue dans PolyApp");
+        Scanner scanner = new Scanner(System.in);
+
+        User utilisateur_connecte=choixUtilisateur(users, scanner);
+
+        Messagerie mess = new Messagerie(utilisateur_connecte, users);
+        Profil profil = new Profil(utilisateur_connecte);
+        Wishlist wl = new Wishlist(utilisateur_connecte);
+        Feed fe = new Feed(utilisateur_connecte, posts);
 
         while (true) {
             System.out.println("Pour accéder au menu, tapez M (ou tapez Q pour quitter)");
@@ -97,6 +106,33 @@ public class App {
         }
     }
 
+    public static User choixUtilisateur(List<User> users, Scanner scanner){
+        // choix de l'utilisateur
+        System.out.println("Liste des utilisateurs disponibles :");
+        for(User user : users){
+            System.out.println(" - "+user.getPrenom());
+        }
 
+        System.out.println("Connectez vous à votre profil en entrant votre prenom");
+        String prenom=scanner.nextLine();
+
+        // verification de l'utilisateur
+        User utilisateur_connecte=null;
+        for(User user : users){
+            if(user.getPrenom().equals(prenom)){
+                utilisateur_connecte=user;
+                break;
+            }
+        }
+
+        if (utilisateur_connecte == null) {
+            System.out.println("Utilisateur non trouvé");
+            return choixUtilisateur(users, scanner);
+        }
+        else {
+            System.out.println("Connecté sur le compte de: " + utilisateur_connecte.getPrenom());
+            return utilisateur_connecte;
+        }
+    }
 
 }

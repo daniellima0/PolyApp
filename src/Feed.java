@@ -40,9 +40,6 @@ public class Feed {
                 this.creerPretMateriel(scanner, utilisateur);
             }
 
-            else{
-                System.out.println("Vous n'avez pas choisi un type de post");
-            }
         }
 
         // si on a un délégué 
@@ -66,9 +63,6 @@ public class Feed {
                 this.creerInformation(scanner, utilisateur);
             }
 
-            else{
-                System.out.println("Vous n'avez pas choisi un type de post");
-            }
         }
 
         // si on a le BDE
@@ -86,24 +80,14 @@ public class Feed {
                 this.creerEvenement(scanner, utilisateur);
             }
 
-            else{
-                System.out.println("Vous n'avez pas choisi un type de post");
-            }
-
         }
 
         // si on a l'Admin
         if (utilisateur.getType().equals("Admin")){
             System.out.println("En tant qu'admin, vous pouvez créer un post d'information.");
-            System.out.println("Tapez I pour créer une information");
+            // pas besoin de faire de choix puisqu'ils peuvent créer que ça
+            this.creerInformation(scanner, utilisateur);
 
-            String choix_post=scanner.nextLine();
-            if (choix_post.equals("I")){
-                this.creerInformation(scanner, utilisateur);
-            }
-            else{
-                System.out.println("Vous n'avez pas choisi un type de post");
-            }
         }
 
     }
@@ -131,7 +115,7 @@ public class Feed {
 
             // creation du post
             ServiceCours post_cours=new ServiceCours(titre, description, date, adresse, nbPersonnes, matiere);
-            System.out.println("Le post a été créé");
+            System.out.println("Le post a bien été créé");
         }
 
         if (choix_service.equals("V")){
@@ -152,6 +136,7 @@ public class Feed {
 
             // creation du post
             ServiceCovoiturage post_covoiturage=new ServiceCovoiturage(titre, description, date, adresse, nbPersonnes, adresseArrivee,heureDepart);
+            System.out.println("Le post a bien été créé");
         }
 
 
@@ -184,6 +169,7 @@ public class Feed {
 
             // creation du post
             PretVetement pret_vetement=new PretVetement(titre, description, nomPhoto, etatInitial, taille);
+            System.out.println("Le post a bien été créé");
             
         }
 
@@ -204,6 +190,7 @@ public class Feed {
 
             // creation du post
             PretMaterielSport materiel_sport=new PretMaterielSport(titre, description, nomPhoto, etatInitial, taille, sport);
+            System.out.println("Le post a bien été créé");
         
         }
 
@@ -224,6 +211,7 @@ public class Feed {
 
             // creation du post
             PretLogement logement=new PretLogement(titre, description, nomPhoto, etatInitial, adresse, duree);
+            System.out.println("Le post a bien été créé");
         }
 
         if (choix_materiel.equals("L")){
@@ -243,6 +231,7 @@ public class Feed {
 
             // creation du post
             PretLivre livre=new PretLivre(titre, description, nomPhoto, etatInitial, titre, auteur);
+            System.out.println("Le post a bien été créé");
         }
 
         if (choix_materiel.equals("A")){
@@ -256,6 +245,7 @@ public class Feed {
 
             // creation du post
             PretAutre autre=new PretAutre(titre, description, nomPhoto, etatInitial);
+            System.out.println("Le post a bien été créé");
         }
 
     }
@@ -268,6 +258,7 @@ public class Feed {
 
         // creation du post
         InformationPost info=new InformationPost(titre, description);
+        System.out.println("Le post a bien été créé");
     }
 
     public void creerEvenement(Scanner scanner, User utilisateur){
@@ -284,6 +275,7 @@ public class Feed {
 
         // création du post
         EvenementPost evenement=new EvenementPost(titre, description, date, adresse, nombre);
+        System.out.println("Le post a bien été créé");
 
     }
 
@@ -320,7 +312,6 @@ public class Feed {
 
         return new String[]{nomPhoto, etatInitial};
     }
-
 
 
 }
