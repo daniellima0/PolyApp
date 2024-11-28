@@ -49,11 +49,11 @@ public class App {
         messages.add(new Message("test1"));
         messages.add(new Message("test2"));  
         alice.setMessagesRecus(messages);
-        creerApp(users, posts);
+        creerApp(users, posts, service);
     }
 
     
-    public static void creerApp(List<User> users, List <Post> posts) {
+    public static void creerApp(List<User> users, List <Post> posts, NotificationService notif) {
         System.out.println("Bienvenue dans PolyApp");
         Scanner scanner = new Scanner(System.in);
 
@@ -62,7 +62,7 @@ public class App {
         Messagerie mess = new Messagerie(utilisateur_connecte, users);
         Profil profil = new Profil(utilisateur_connecte);
         Wishlist wl = new Wishlist(utilisateur_connecte);
-        Feed fe = new Feed(utilisateur_connecte, posts);
+        Feed fe = new Feed(utilisateur_connecte, posts, notif);
 
         while (true) {
             System.out.println("Pour accéder au menu, tapez M (ou tapez Q pour quitter)");

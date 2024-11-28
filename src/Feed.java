@@ -7,10 +7,10 @@ public class Feed {
     private List<Post> posts;
     private NotificationService notif;
 
-    public Feed(User u, List <Post> p){
+    public Feed(User u, List <Post> p, NotificationService service){
         this.utilisateur=u;
         this.posts=p;
-        this.notif = new NotificationService();
+        this.notif = service;
     }
 
     public void feedApp(){
