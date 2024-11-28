@@ -1,6 +1,6 @@
 public class InformationPost extends Post{
-    public InformationPost(String titre, String description, boolean soutient){
-        super(titre, description, soutient);
+    public InformationPost(String titre, String description){
+        super(titre, description);
     }
 
     @Override

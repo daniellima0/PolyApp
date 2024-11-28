@@ -1,5 +1,4 @@
 import java.util.Date;
-import java.util.List;
 
 public class EvenementPost extends Post{
     private Date date;
@@ -7,8 +6,8 @@ public class EvenementPost extends Post{
     private boolean wishlist;
     private int nbPersonnes;
 
-    public EvenementPost(String titre, String description, boolean soutient){
-     super(titre, description, soutient);   
+    public EvenementPost(String titre, String description){
+        super(titre, description);   
     }
 
     @Override

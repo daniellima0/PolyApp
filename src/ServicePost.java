@@ -5,8 +5,8 @@ public class ServicePost extends Post{
     private String adresse;
     private int nbPersonnes;
 
-    public ServicePost(String titre, String description, boolean soutient, Date date, String adresse, int nb_personnes){
-        super(titre, description, soutient);
+    public ServicePost(String titre, String description,  Date date, String adresse, int nb_personnes){
+        super(titre, description);
         this.date=date;
         this.nbPersonnes=nb_personnes;
     }

@@ -1,9 +1,10 @@
+
 public class PretLogement extends PretMaterielPost {
     protected String adresse;
     protected String dureeLocation;
 
-    public PretLogement(String titre, String description, boolean soutient, String photo, String etat_initial, String adresse, String duree_location){
-        super(titre, description, soutient, photo, etat_initial);
+    public PretLogement(String titre, String description, String photo, String etat_initial, String adresse, String duree_location){
+        super(titre, description, photo, etat_initial);
         this.adresse=adresse;
         this.dureeLocation=duree_location;
     }

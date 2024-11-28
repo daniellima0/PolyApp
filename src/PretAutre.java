@@ -1,7 +1,7 @@
 
 public class PretAutre extends Post {
-    public PretAutre(String titre, String description, boolean soutient){
-        super(titre, description, soutient);
+    public PretAutre(String titre, String description ){
+        super(titre, description);
     }
 
     @Override

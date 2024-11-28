@@ -5,8 +5,8 @@ public class PretMaterielPost extends Post {
     protected String etatInitial;
     protected boolean wishlist; //On peut mettre un pret de matériel dans la wishlist
 
-    public PretMaterielPost(String titre, String description, boolean soutient,String photo, String etat_initial){
-        super(titre, description, soutient);
+    public PretMaterielPost(String titre, String description, String photo, String etat_initial){
+        super(titre, description);
         this.etatInitial=etat_initial;
         this.photo=photo;
         this.etatFinal=null;

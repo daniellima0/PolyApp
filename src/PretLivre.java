@@ -1,9 +1,10 @@
+
 public class PretLivre extends PretMaterielPost {
     private String titreLivre;
     private String auteur;
 
-    public PretLivre(String titre, String description, boolean soutient, String photo, String etat_initial, String titre_livre, String auteur){
-        super(titre, description, soutient, photo, etat_initial);
+    public PretLivre(String titre, String description,  String photo, String etat_initial, String titre_livre, String auteur){
+        super(titre, description, photo, etat_initial);
         this.titreLivre=titre_livre;
         this.auteur=auteur;
     }
