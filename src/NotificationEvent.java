@@ -34,6 +34,5 @@ public class NotificationEvent {
         }else if(this.type.equals("POST")){
             System.out.println("Un nouveau post est disponible");
         }
-
    }
 }

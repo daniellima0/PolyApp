@@ -14,11 +14,29 @@ public class Feed {
     public void feedApp(){
         System.out.println("Vous vous trouvez dans le feed");
         System.out.println("Pour creer un post, tapez P");
-
+        System.out.println("Pour accéder au feed (tous les posts), tapez F");
         String input=scanner.nextLine();
         
-        if (input.equals("P")){ 
+        if (input.equalsIgnoreCase("P")){ 
             this.creerPost(scanner, this.utilisateur);
+        }else if(input.equalsIgnoreCase("F")){
+            afficheFeed();
+        }
+    }
+
+    public void afficheFeed(){
+        for (Post post : posts){
+            System.out.println(post.toString());
+            if (post instanceof PretMaterielPost){
+                System.out.println("Voulez-vous liker le post? Si oui tapez L sinon P");
+                String like=scanner.nextLine();
+
+                if(like.equalsIgnoreCase("L")){
+                    //Ajoutez le post à la wishlist
+                    this.utilisateur.addToWishlist(post);
+                }
+            }
+            
         }
     }
 
