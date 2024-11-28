@@ -169,7 +169,7 @@ public class App {
             }
            
             // création du compte
-            Student etudiant = new Student(prenom, nom, mail, promotion, annee, delegue);
+            Student etudiant = new Student(nom, prenom, mail, promotion, annee, delegue);
             System.out.println("Compte Etudiant créé avec succès");
             users.add(etudiant);
 
@@ -181,7 +181,7 @@ public class App {
             String metier = scanner.nextLine();
 
             // creation du compte
-            Admin nouveau_admin = new Admin(prenom, nom, mail, metier);
+            Admin nouveau_admin = new Admin(nom, prenom, mail, metier);
             System.out.println("Compte Admin créé avec succès");
             users.add(nouveau_admin);
 
