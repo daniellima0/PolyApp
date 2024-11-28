@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Feed {
@@ -5,8 +6,9 @@ public class Feed {
     private Scanner scanner=new Scanner(System.in);
     private List<Post> posts;
 
-    public Feed(User u){
+    public Feed(User u, List <Post> p){
         this.utilisateur=u;
+        this.posts=p;
     }
 
     public void feedApp(){
