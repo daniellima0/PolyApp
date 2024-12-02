@@ -2,6 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+// Bonne idée pour le pattern builder, mais problème d'implémentation:
+// - Il aurait fallu construire une interface avec le noms des fonctions de cette classe et bouger 
+//   l'implémentation de ces fonctions dans une classe concrète.
+// - Ajouter une classe "directeur" qui gère les instances des builders
+// 
+// Cela aurait pu permettre de choisir différents builder en fonction du type d'utilisateur par exemple.
+// voir https://refactoring.guru/design-patterns/builder#structure
+
 public class App {
     public static void main(String[] args) throws Exception {
         NotificationService service = new NotificationService();

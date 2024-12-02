@@ -50,6 +50,7 @@ public abstract class User implements Observer{
         System.out.println(this.nom + " a ajouté le post à la wishlist : " + post); 
     }
    
+    // Très bien, pattern observer bien compris
     @Override 
     public void update(NotificationEvent event) {
         if (event.getType().equals("MESSAGE")){
@@ -67,6 +68,7 @@ public abstract class User implements Observer{
     }
 
     public List<Post> getWishList() {
+        // boucle for inutile ? :)
         for (int i=0; i<wishList.size();i++){
             this.wishList.get(i).toString();
         }

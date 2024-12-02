@@ -1,4 +1,8 @@
 public class NotificationEvent {
+
+    // Utiliser un enum aurait pu être intéressant pour s'assurer que le type de notification choisi 
+    // autre part dans le code existe bien. Ça aurait également permit d'avoir un switch case bien propre
+    // dans la fonction action()
     public static final String MESSAGE_RECEIVED = "MESSAGE";
     public static final String NEW_POST = "POST";
 
